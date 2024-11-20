@@ -1,0 +1,229 @@
+body {
+    overflow-y: scroll; /* Memungkinkan halaman untuk di-scroll secara vertikal */
+}
+.scroll-container {
+    height: 400px;
+    overflow-y: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #000;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000; /* Background gelap tanpa gradasi */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.stars {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.6; /* Bintang kecil lebih terang */
+    animation: moveStars 100s linear infinite;
+}
+
+.stars2 {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.4; /* Bintang lapisan kedua lebih redup */
+    transform: scale(1.5);
+    animation: moveStars 150s linear infinite;
+}
+
+.stars3 {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2; /* Bintang lapisan ketiga lebih redup */
+    transform: scale(2);
+    animation: moveStars 200s linear infinite;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgb(197, 41, 41)(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+
+.navbar ul li a:hover {
+    color: #0ff;
+}
+
+/* Efek bintang jatuh */
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+.falling-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.falling-stars::before, .falling-stars::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: rotate(45deg);
+    opacity: 0.6;
+    animation: fall 3s linear infinite;
+}
+
+.falling-stars::before {
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.falling-stars::after {
+    left: 75%;
+    animation-delay: 1.5s;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20vh;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+header p {
+    font-size: 1.2em;
+    color: #dcdcdc;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.content h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.content p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #dcdcdc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+}
+
+.stars {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+}
+
+.stars {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: 10px;
+    background: white;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    box-shadow: 0 0 10px white;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+
+
